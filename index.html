@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee</title>
+    <!-- style link -->
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts -->
+    
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body style="background-color: rgb(240, 236, 101);">
+    <nav style="background-color: rgb(241, 40, 144);" class="navbar navbar-expand-lg navbar-light ">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand fw-bolder  text-white" href="#!">Shopee</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item "><a class="nav-link active" href="#!">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                    <button class="btn btn-outline-dark ms-4" type="submit"> Login </button>
+                      
+            
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="">
+           
+
+            <img width="100%" src="https://assets.pandaily.com/uploads/2020/06/online-shopping-apps.jpg" alt="">
+
+             <div class="text-center text-white mt-5">
+                <h1 class="display-4 text-danger fw-bolder">Shop in style</h1>
+                <p class="lead fw-normal text-success mb-5">With this shopee Website</p>
+            </div>
+    </header>
+    <!-- carousel -->
+    <div style="margin-left: 200px;" id="carouselExampleAutoplaying" class="carousel slide w-75" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/177/333/original/vector-promotional-advertising-banner-poster-template-with-offer-detail.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.grabon.in/gograbon/images/web-images/uploads/1593768343013/mobile-offers.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://dealroup.com/wp-content/uploads/2020/05/Grocery-Offers.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <h1 class="display-4 text-primary fw-bolder text-center mt-5">Products Details</h1>
+
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div id="result" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Shopee 2024 by Muhammed Yasin</p></div>
+    </footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+<script>
+    fetch("https://dummyjson.com/products",{
+        method: "GET"
+    }).then((apiResponse)=>{
+        console.log(apiResponse);
+        apiResponse.json().then((serverResponse)=>{
+            console.log(serverResponse);
+            const allProducts=serverResponse.products
+            console.log(allProducts);
+            allProducts.forEach(product=>{
+                result.innerHTML+=`
+            
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 recipe-card">
+                    <div class="card service-card shadow-sm" style="width: 18rem;">
+                        <img src="${product.thumbnail}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"> ${product.title}</h5>
+                          <p class="card-text">${product.price}</p>
+                          <p class="card-text text-danger">Rating: ${product.rating}/5</p>
+                <button style="background-color: rgb(237, 232, 88);"  onclick="getProduct(${product.id})" class="btn ">View Item</button>
+                        </div>
+                    </div>
+                </div>
+                
+                `
+            })
+            
+            
+        })
+
+    }).catch((reason)=>{
+        console.log(reason);
+        
+    })
+
+
+    function getProduct(productId)
+    {
+        // alert(productId)
+        sessionStorage.setItem("id",JSON.stringify(productId))
+        window.location ="products.html"
+    }
+</script>
+</html>
